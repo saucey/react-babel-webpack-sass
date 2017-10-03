@@ -8,7 +8,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 module.exports = {
-  entry: './src/app.js',
+  entry: ['./src/app.js','webpack-hot-middleware/client'],
   output: {
     // path: './bin',
     publicPath: '/',

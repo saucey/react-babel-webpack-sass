@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8aa19508-363c-417d-9414-cdb0e3b69438" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.html" afterPath="$PROJECT_DIR$/src/app.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/scss/styles.scss" afterPath="$PROJECT_DIR$/src/assets/scss/styles.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="328">
+              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -41,6 +41,8 @@
       <find>node-sass</find>
       <find>js-trigger-event</find>
       <find>webpack</find>
+      <find>compiler</find>
+      <find>bro</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -55,9 +57,9 @@
         <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/app.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/assets/scss/styles.scss" />
-        <option value="$PROJECT_DIR$/server/server.js" />
       </list>
     </option>
   </component>
@@ -262,12 +264,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506969884009</updated>
       <workItem from="1506969885174" duration="12381000" />
-      <workItem from="1507041232824" duration="9652000" />
+      <workItem from="1507041232824" duration="11205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22033000" />
+    <option name="totallyTimeSpent" value="23586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="203" y="83" width="1345" height="795" extended-state="0" />
@@ -298,7 +300,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/server.js</url>
+          <line>12</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -307,11 +318,37 @@
         <state relative-caret-position="315">
           <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding>
-            <marker date="1507065849000" expanded="true" signature="0:793" ph="{&quot;name&quot;: &quot;my-react&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="145:184" ph="{&quot;start&quot;: &quot;webpack-dev-server&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="204:630" ph="{&quot;css-loader&quot;: &quot;^0.28.7&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="653:791" ph="{&quot;babel-core&quot;: &quot;^6.26.0&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="0:825" ph="{&quot;name&quot;: &quot;my-react&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="145:184" ph="{&quot;start&quot;: &quot;webpack-dev-server&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="204:630" ph="{&quot;css-loader&quot;: &quot;^0.28.7&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="653:823" ph="{&quot;babel-core&quot;: &quot;^6.26.0&quot;...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/app.bundle.js" />
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -319,34 +356,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/app.bundle.js" />
-    <entry file="file://$PROJECT_DIR$/src/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="11" />
           <folding>
-            <marker date="1507043698000" expanded="true" signature="31:1080" ph="..." />
-            <marker date="1507043698000" expanded="true" signature="39:997" ph="..." />
-            <marker date="1507043698000" expanded="true" signature="240:399" ph="..." />
-            <marker date="1507043698000" expanded="true" signature="410:988" ph="..." />
-            <marker date="1507043698000" expanded="true" signature="579:647" ph="{&quot;cluster&quot;: 'eu'...}" />
-            <marker date="1507043698000" expanded="true" signature="758:820" ph="{...}" />
-            <marker date="1507043698000" expanded="true" signature="848:975" ph="{...}" />
-            <marker date="1507043698000" expanded="true" signature="909:961" ph="{...}" />
-            <marker date="1507043698000" expanded="true" signature="1005:1072" ph="..." />
+            <marker date="1506969958000" expanded="true" signature="0:43" ph="{...}" />
+            <marker date="1506969958000" expanded="true" signature="14:41" ph="[...]" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yarn.lock">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <marker date="1507067505000" expanded="true" signature="0:825" ph="{&quot;name&quot;: &quot;my-react&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="145:184" ph="{&quot;start&quot;: &quot;webpack-dev-server&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="204:630" ph="{&quot;css-loader&quot;: &quot;^0.28.7&quot;...}" />
+            <marker date="1507067505000" expanded="true" signature="653:823" ph="{&quot;babel-core&quot;: &quot;^6.26.0&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding>
+            <marker date="1506972945000" expanded="true" signature="7:125" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -363,75 +399,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state relative-caret-position="426">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <marker date="1506972945000" expanded="true" signature="7:125" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <marker date="1507065849000" expanded="true" signature="0:793" ph="{&quot;name&quot;: &quot;my-react&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="145:184" ph="{&quot;start&quot;: &quot;webpack-dev-server&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="204:630" ph="{&quot;css-loader&quot;: &quot;^0.28.7&quot;...}" />
-            <marker date="1507065849000" expanded="true" signature="653:791" ph="{&quot;babel-core&quot;: &quot;^6.26.0&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/scss/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding>
-            <marker date="1507064833000" expanded="true" signature="5:35" ph="{...}" />
+            <marker date="1507066677000" expanded="true" signature="31:1103" ph="..." />
+            <marker date="1507066677000" expanded="true" signature="39:997" ph="..." />
+            <marker date="1507066677000" expanded="true" signature="240:399" ph="..." />
+            <marker date="1507066677000" expanded="true" signature="410:988" ph="..." />
+            <marker date="1507066677000" expanded="true" signature="579:647" ph="{&quot;cluster&quot;: 'eu'...}" />
+            <marker date="1507066677000" expanded="true" signature="758:820" ph="{...}" />
+            <marker date="1507066677000" expanded="true" signature="848:975" ph="{...}" />
+            <marker date="1507066677000" expanded="true" signature="909:961" ph="{...}" />
+            <marker date="1507066677000" expanded="true" signature="1005:1095" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="149">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding>
-            <marker date="1507064701000" expanded="true" signature="179:256" ph="{&quot;template&quot;: './src/app.html'...}" />
-            <marker date="1507064701000" expanded="true" signature="275:808" ph="{&quot;entry&quot;: './src/app.js'...}" />
-            <marker date="1507064701000" expanded="true" signature="312:386" ph="{&quot;publicPath&quot;: '/'...}" />
-            <marker date="1507064701000" expanded="true" signature="398:678" ph="{...}" />
-            <marker date="1507064701000" expanded="true" signature="413:674" ph="[...]" />
-            <marker date="1507064701000" expanded="true" signature="570:667" ph="{...}" />
-            <marker date="1507064701000" expanded="true" signature="692:806" ph="[...]" />
+            <marker date="1507069020000" expanded="true" signature="179:256" ph="{&quot;template&quot;: './src/app.html'...}" />
+            <marker date="1507069020000" expanded="true" signature="275:842" ph="{...}" />
+            <marker date="1507069020000" expanded="true" signature="346:420" ph="{&quot;publicPath&quot;: '/'...}" />
+            <marker date="1507069020000" expanded="true" signature="432:712" ph="{...}" />
+            <marker date="1507069020000" expanded="true" signature="447:708" ph="[...]" />
+            <marker date="1507069020000" expanded="true" signature="604:701" ph="{...}" />
+            <marker date="1507069020000" expanded="true" signature="726:840" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding>
+            <marker date="1507069030000" expanded="true" signature="5:34" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="328">
+          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>

@@ -6,17 +6,14 @@ const app = express();
 const config = require('../webpack.config.js');
 const compiler = webpack(config);
 
+
+
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
   noInfo: true,
 }));
 
-app.use(webpackHotMiddleware(compiler, {
-  log: false,
-  // Not sure this does anything (*)
-  path: "*",
-  heartbeat: 2000
-}));
+app.use(webpackHotMiddleware(compiler));
 
 app.get('/trigger', function (req, res) {
   var Pusher = require('pusher');
