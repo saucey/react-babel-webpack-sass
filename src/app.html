@@ -4,8 +4,33 @@
 		<title>My React From The Scratch</title>
 		<meta charset="utf-8">
 		<meta content="author" description="Pusher of codes">
+		<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+		<script
+				src="https://code.jquery.com/jquery-3.2.1.min.js"
+				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				crossorigin="anonymous"></script>
+		<script>
+          // Enable pusher logging - don't include this in production
+          Pusher.logToConsole = true;
+
+          var pusher = new Pusher('4014bb66ddc0aea56d6c', {
+            cluster: 'eu',
+            encrypted: true
+          });
+
+          var channel = pusher.subscribe('my-channel');
+          channel.bind('my-event', function (data) {
+            console.log("event received", data);
+          });
+
+          $(function () {
+            $('.js-trigger-event').on('click', function () {
+              $.getJSON('/trigger');
+            });
+          });
+		</script>
 	</head>
 	<body>
-		<div id="app"></div>
+		<button class='js-trigger-event'>Trigger Event</button>
 	</body>
 </html>

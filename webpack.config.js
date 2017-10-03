@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -10,7 +11,8 @@ module.exports = {
   entry: './src/app.js',
   output: {
     // path: './bin',
-    filename: 'app.bundle.js'
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -22,10 +24,10 @@ module.exports = {
       },
     ]
   },
-  devServer: {
-    inline:true,
-    port: 8888
-  },
-  plugins: [HtmlWebpackPluginConfig]
+
+  plugins: [HtmlWebpackPluginConfig,
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ]
 };
 
