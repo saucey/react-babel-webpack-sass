@@ -5,6 +5,13 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const app = express();
 const config = require('../webpack.config.js');
 const compiler = webpack(config);
+// const http = require('http').Server(app),
+const http = require('http').Server(app);
+WebSocketServer = require('ws').Server,
+    wss = new WebSocketServer({
+      port: 8888,
+      path:'/welcome'
+    });
 
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
@@ -13,25 +20,25 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/trigger', function (req, res) {
-  var Pusher = require('pusher');
-
-  var pusher = new Pusher({
-    appId: '406188',
-    key: '4014bb66ddc0aea56d6c',
-    secret: 'bd1a043587da29142c46',
-    cluster: 'eu',
-    encrypted: true
+// app.post('/trigger', function (req, res) {
+wss.broadcast = function broadcast(data) {
+  wss.clients.forEach(function each(client) {
+    client.send(data);
   });
+};
 
-  pusher.trigger('my-channel', 'my-event', {
-    "message": "hello world"
+wss.on('connection', function(ws) {
+  ws.on('message', function(msg) {
+    data = JSON.parse(msg);
+    console.log(data);
+    if (data) wss.broadcast('<strong>' + data.name + '</strong>:');
   });
-
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({success: true}));
 });
 
-app.listen(3333, function () {
-  console.log('Example app listening on port 3000!\n');
+// });
+
+http.listen(3333, function () {
+  console.log('Example app listening on port 3333!\n');
 });
+
+
