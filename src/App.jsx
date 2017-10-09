@@ -19,8 +19,6 @@ export default class App extends Component {
 
   }
 
-
-
   componentDidMount() {
     this.socket = new WebSocket('ws://localhost:8888/welcome')
     this.socket.onopen = () => this.onSocketOpen()
@@ -50,7 +48,6 @@ export default class App extends Component {
     this.socket.send(JSON.stringify({
       name: this.state.value,
     }));
-
   }
 
   render() {
@@ -67,6 +64,7 @@ export default class App extends Component {
 
           <h1>Welcome: {this.state.name}</h1>
           <h2>{this.state.message}</h2>
+
         </form>
     );
   }
