@@ -8,7 +8,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 module.exports = {
-  entry: ['./src/app.js','webpack-hot-middleware/client'],
+  entry: ['./src/app.js'],
   output: {
     // path: './bin',
     publicPath: '/',
@@ -22,7 +22,16 @@ module.exports = {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
+      {
+        test: /\.(gif|jpe?g|png)$/,
+        loader: 'url-loader?limit=25000',
+      },
     ]
+  },
+
+  devServer: {
+    inline:true,
+    port: 8008
   },
 
   plugins: [HtmlWebpackPluginConfig,

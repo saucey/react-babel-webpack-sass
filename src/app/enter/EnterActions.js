@@ -1,6 +1,6 @@
-export const onEnter = data => ({
+export const onEnter = name => ({
   type: 'ON_ENTER',
-  data
+  name
 })
 
 export const addUser = name => ({

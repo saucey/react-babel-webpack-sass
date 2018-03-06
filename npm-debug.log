@@ -10,7 +10,7 @@
 6 silly lifecycle my-react@1.0.0~predev: no script for predev, continuing
 7 info lifecycle my-react@1.0.0~dev: my-react@1.0.0
 8 verbose lifecycle my-react@1.0.0~dev: unsafe-perm in lifecycle true
-9 verbose lifecycle my-react@1.0.0~dev: PATH: /Users/leoscott/.nvm/versions/node/v6.11.3/lib/node_modules/npm/bin/node-gyp-bin:/Users/leoscott/www/react-websocket/node_modules/.bin:/Users/leoscott/.nvm/versions/node/v6.11.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+9 verbose lifecycle my-react@1.0.0~dev: PATH: /Users/leoscott/.nvm/versions/node/v6.11.3/lib/node_modules/npm/bin/node-gyp-bin:/Users/leoscott/www/react-websocket/node_modules/.bin:/Users/leoscott/.nvm/versions/node/v6.11.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/leoscott/Downloads/apache-maven-3.5.2/bin
 10 verbose lifecycle my-react@1.0.0~dev: CWD: /Users/leoscott/www/react-websocket
 11 silly lifecycle my-react@1.0.0~dev: Args: [ '-c', 'node server/server.js' ]
 12 silly lifecycle my-react@1.0.0~dev: Returned: code: 1  signal: null

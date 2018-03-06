@@ -12,9 +12,7 @@ export default class Enter extends Component {
     this.state = {
       name:'',
       value: '',
-      message: [],
-      modal: false,
-      enter: false
+      redirectToNewPage: false
     };
 
     // this.toggle = this.toggle.bind(this);
@@ -24,10 +22,10 @@ export default class Enter extends Component {
   }
 
   componentDidMount() {
-    this.socket = new WebSocket('ws://localhost:8888/welcome')
-    this.socket.onopen = () => this.onSocketOpen()
-    this.socket.onmessage = (m) => this.onSocketData(m)
-    this.socket.onclose = (c) => this.onSocketClose(c)
+    // this.socket = new WebSocket('ws://localhost:8888/welcome')
+    // this.socket.onopen = () => this.onSocketOpen()
+    // this.socket.onmessage = (m) => this.onSocketData(m)
+    // this.socket.onclose = (c) => this.onSocketClose(c)
   }
 
   onSocketOpen(){}
@@ -54,18 +52,22 @@ export default class Enter extends Component {
   
   onSubmit (e) {
     e.preventDefault()
+
+    this.setState({ redirectToNewPage: true })
     this.setState({name: this.state.value});
 
-    this.socket.send(JSON.stringify({
-      name: this.state.value,
-    }));
-
     // this.props.addUser(this.state.value)
-    this.props.onEnter(true)
-
+    this.props.onEnter(this.state.value)
   }
 
   render() {
+
+     if (this.state.redirectToNewPage) {
+       return (
+         <Redirect to="/lobby"/>
+       )
+     }
+
     return (
         <div>
           <div className="container">
@@ -79,13 +81,7 @@ export default class Enter extends Component {
                     <small id="emailHelp" className="form-text text-muted">Enter a name you would like to describe yourself as to the other users!</small>
                   </div>
                   <button type="submit" className="enter-btn btn btn-outline-primary">ENTER</button>
-                  {this.state.message.map((user, index) =>
-                      <h1 key={index}>{user}</h1>
-                  )}
                 </form>
-                {/*{this.props.enter && (*/}
-                {/*<Redirect to={'/users'}/>*/}
-                {/*)}*/}
               </div>
             </div>
           </div>

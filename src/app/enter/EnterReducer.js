@@ -1,10 +1,11 @@
-const initialState = false
+const initialState = ''
 
 const enter = (state = initialState, action) => {
 
   switch (action.type) {
     case 'ON_ENTER':
-      state = action.data;
+
+      state = action.name;
       return state
 
     default:

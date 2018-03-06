@@ -10,7 +10,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 const mapStateToProps = state => ({
-}, state)
+  enter: state.enter,
+})
 
 
 

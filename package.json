@@ -36,6 +36,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "browser-sync": "^2.18.13"
+    "browser-sync": "^2.18.13",
+    "file-loader": "^1.1.6",
+    "url-loader": "^0.6.2"
   }
 }

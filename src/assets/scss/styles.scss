@@ -7,3 +7,27 @@ body {
 .enter-btn {
 	cursor: pointer;
 }
+
+.the-example {
+	background: url(../images/deck.png);
+	height: 123px;
+	width: 79px;
+	background-position: 0 123px;
+}
+
+.joker {
+	background: url(../images/deck.png);
+}
+
+.general-card {
+	background: url(../images/deck.png);
+	height: 123px;
+	width: 35px;
+	display: inline-block;
+	cursor: pointer;
+	/*background-position: 0 123px;*/
+}
+
+.selectUserBox {
+	cursor: pointer;	
+}

@@ -5,9 +5,23 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import Main from './app/layout/MainLayout'
 import Enter from './app/enter/EnterContainer'
+import Cards from './app/cards/CardsContainer'
 import Users from './app/users/UsersContainer'
 import React, { Component }  from 'react'
 import {Redirect, Switch, Route} from 'react-router-dom'
+
+const routes = [
+  {
+    exact: true,
+    path: '/',
+    component: Enter,
+    // layout: Empty,
+  }, {
+    path: '/lobby',
+    component: Cards,
+    // layout: Main,
+  },
+];
 
 class appRoute extends Component {
 
@@ -18,11 +32,14 @@ class appRoute extends Component {
   render() {
     return (
         <div>
-
-          <Enter/>
+          <Switch>
+            {routes.map(route => (
+                <Route path={route.path} key={route.path} exact={route.exact}>
+                    <route.component />
+                </Route>
+            ))}
+          </Switch>
         </div>
-
-
     )
   }
 }
