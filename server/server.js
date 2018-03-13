@@ -6,28 +6,77 @@ const WebSocket = require('ws');
 
 const app = express();
 
-const wss = new WebSocket.Server({port: 9000});
+const wss = new WebSocket.Server({port: 9999});
+
 let usersInLobby = [];
+let room = [];
+let usersInRoom = [];
 
 wss.broadcast = function broadcast(data) {
+
   wss.clients.forEach(function each(client) {
     client.send(data);
   });
+ 
 };
 
 wss.broadcastTo = function broadcast(target, data) {
+
   wss.clients.forEach(function each(client) {
+
+    console.log(usersInRoom.room, 'grrr');
+    console.log('========================================================================================')
+    // console.log(JSON.stringify(Object.keys(usersInRoom)), 'grrr');
+
+    console.log(JSON.stringify(Object.keys(JSON.stringify(usersInRoom))), 'LOG object keys users in room!!!!!');
+    console.info(JSON.stringify(Object.keys(JSON.stringify(usersInRoom))), 'INFO object keys users in room!!!!!');
+
     if (client === usersInLobby[target]) {
       client.send(data);
     }
+
   });
+
 };
+
+// function broadcast(message){
+//   wss.clients.forEach(client => {
+//     if(client.room.indexOf(JSON.parse(message).room)>-1) {
+//       client.send(message)
+//     }
+//   })
+// };
+
+// ws.on('message', message=> {
+//   var messag=JSON.parse(message);
+//   //}catch(e){console.log(e)}
+//   if(messag.join){ws.room.push(messag.join)}
+//   if(messag.room){broadcast(message);}
+//   if(messag.msg){console.log('message: ',messag.msg)}
+// })
+
+//   ws.on('error',e=>console.log(e))
+//   ws.on('close',(e)=>console.log('websocket closed'+e))
+
+// });
 
 // maintain list of current users
 wss.on('connection', (ws) => {
+  ws.room = [];
+
   ws.on('message', (message) => {
 
     message = JSON.parse(message);
+
+    if (message.action === 'addRoom') {
+
+      ws.room.push(message)
+
+      usersInRoom[message] = ws
+
+      room[message.room] = ws;
+      wss.broadcastTo(message.from, JSON.stringify({usernames: message.username, messageType: 'enterGame'}));
+    }    
 
     if (message.action === 'add') {
       usersInLobby[message.username] = ws;
@@ -86,8 +135,6 @@ app.get('/selected-user', function (req, res) {
 
 app.get('/log-out-all', function (req, res) {
   usersInLobby = []
-
-  console.log(Object.keys(usersInLobby), 'all users logged out!!!')
 
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({success: true, users: Object.keys(usersInLobby)}));

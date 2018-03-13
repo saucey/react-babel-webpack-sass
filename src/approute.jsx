@@ -7,6 +7,7 @@ import Main from './app/layout/MainLayout'
 import Enter from './app/enter/EnterContainer'
 import Cards from './app/cards/CardsContainer'
 import Users from './app/users/UsersContainer'
+import Game from './app/game/GameContainer'
 import React, { Component }  from 'react'
 import {Redirect, Switch, Route} from 'react-router-dom'
 
@@ -19,6 +20,10 @@ const routes = [
   }, {
     path: '/lobby',
     component: Cards,
+    // layout: Main,
+  }, {    
+    path: '/game',
+    component: Game,
     // layout: Main,
   },
 ];

@@ -15,6 +15,7 @@
         user: '',
         from: '',
         redirecttohome: false,
+        redirectToGame: false,
         modal: false
       };
   
@@ -22,7 +23,20 @@
       this.logOutAll = this.logOutAll.bind(this);
       this.selectUser = this.selectUser.bind(this);
       this.toggle = this.toggle.bind(this);
+      this.agreedToChallenge = this.agreedToChallenge.bind(this);
   
+    }
+
+    agreedToChallenge() {
+
+      this.toggle(); 
+
+      this.setState({
+        redirectToGame: true
+      });
+
+      this.websocket.send(JSON.stringify({ action: 'addRoom', room: 'TheGamesRoom1', username: this.props.name, from:this.state.from }));
+
     }
   
     handleClick(name) {
@@ -55,14 +69,12 @@
     }
   
     componentDidMount() {
-      this.websocket = new WebSocket("ws://localhost:9000/");
+      this.websocket = new WebSocket("ws://localhost:9999/");
 
       this.websocket.addEventListener('open', () => {
         this.websocket.send(JSON.stringify({ action: 'add', username: this.props.name }));
       });
   
-      // $.getJSON('http://localhost:5000/entered-lobby', { username: this.props.name });
-
       this.setState({ user: this.props.name })
       this.websocket.onmessage = (evt) => this.onSocketData(evt)
   
@@ -79,7 +91,7 @@
       return true;
     }
   
-    sendNewDeck(params){
+    sendNewDeck(params) {
       $.getJSON('http://localhost:5000/send-move', params);
     }
   
@@ -91,6 +103,15 @@
   
       if (data) {
         switch (data.messageType) {
+
+          case 'enterGame':
+
+            this.setState({
+              redirectToGame: true
+            });
+
+            break;
+
           case 'selectedUser':
 
             this.setState({
@@ -121,6 +142,7 @@
   
     cardSocket(cardData) {
       this.props.sockCardData(cardData);
+
       return true;
     }
 
@@ -139,8 +161,13 @@
     //   );
     // }
   
-  
     render() {
+
+      if (this.state.redirectToGame) {
+        return (
+            <Redirect to="/game"/>
+        )
+      }
   
       if (this.state.redirectToHome) {
         return (
@@ -184,7 +211,7 @@
                 </ModalBody>
                 */}
                 <ModalFooter>
-                  <Button color="primary" onClick={this.toggle}>Yes</Button>{' '}
+                  <Button color="primary" onClick={() => this.agreedToChallenge()}>Yes</Button>
                   <Button color="danger" onClick={this.toggle}>No</Button>
                 </ModalFooter>
               </Modal>
